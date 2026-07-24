@@ -1,0 +1,141 @@
+{
+  "app_type": "saas_dashboard",
+  "app_name": "Cozzian LabSync",
+  "brand_name": "Cozzian LabSync",
+  "tagline": "From concept to compliant product in 45 days — 30% faster than industry average.",
+  "primary_color": "#0B3D2E",
+  "accent_color": "#C8A96E",
+  "secondary_color": "#F7F4EF",
+  "font_heading": "Space Grotesk",
+  "font_body": "DM Sans",
+  "voice_tone": "expert, precise, trustworthy, innovative",
+  "logo_concept": "A beaker icon with a molecular structure merging into a leaf, in deep teal and gold",
+  "brand_values": [
+    "Scientific integrity",
+    "Accelerated innovation",
+    "Regulatory clarity"
+  ],
+  "sections": [
+    "hero",
+    "stats",
+    "features",
+    "how it works",
+    "testimonials",
+    "pricing",
+    "cta"
+  ],
+  "backend_resources": [
+    "projects",
+    "formulations",
+    "ingredients",
+    "compliance_reports",
+    "users",
+    "metrics"
+  ],
+  "features": [
+    "formulation science",
+    "R&D prototyping",
+    "compliance-ready",
+    "market-ready",
+    "project tracking",
+    "ingredient library"
+  ],
+  "pricing_tiers": [
+    "Starter: $499/mo — 2 active projects, basic ingredient library",
+    "Professional: $1,299/mo — 10 active projects, compliance reports, priority support",
+    "Enterprise: Custom — unlimited projects, dedicated formulation scientist, API access"
+  ],
+  "target_customer": "cosmetics, nutraceutical, pharmaceutical, and food & beverage brands",
+  "key_metric": "45-day concept-to-market cycle",
+  "hero_stats": [
+    {
+      "value": "30%",
+      "label": "Faster time-to-market"
+    },
+    {
+      "value": "99%",
+      "label": "Compliance pass rate"
+    },
+    {
+      "value": "200+",
+      "label": "Ingredients in library"
+    }
+  ],
+  "api_contract": [
+    {
+      "method": "GET",
+      "path": "/api/metrics",
+      "response": "{\"avg_time_to_market\": 45, \"compliance_rate\": 99, \"library_size\": 200}",
+      "description": "Returns key performance metrics"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "response": "[{\"id\":1,\"name\":\"Serum X\",\"status\":\"prototyping\",\"deadline\":\"2025-06-01\"}]",
+      "description": "List all R&D projects"
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects",
+      "response": "{\"id\":2,\"name\":\"Cream Y\",\"status\":\"concept\"}",
+      "description": "Create a new project"
+    },
+    {
+      "method": "GET",
+      "path": "/api/formulations",
+      "response": "[{\"id\":1,\"project_id\":1,\"name\":\"Base formula v3\",\"ingredients\":[]}]",
+      "description": "List formulations for a project"
+    },
+    {
+      "method": "POST",
+      "path": "/api/formulations",
+      "response": "{\"id\":2,\"project_id\":1,\"name\":\"New blend\"}",
+      "description": "Create a new formulation"
+    },
+    {
+      "method": "GET",
+      "path": "/api/ingredients",
+      "response": "[{\"id\":1,\"name\":\"Hyaluronic Acid\",\"category\":\"Active\",\"compliance\":true}]",
+      "description": "List all ingredients in library"
+    },
+    {
+      "method": "GET",
+      "path": "/api/compliance_reports",
+      "response": "[{\"id\":1,\"project_id\":1,\"status\":\"passed\",\"date\":\"2025-03-01\"}]",
+      "description": "Get compliance reports for a project"
+    },
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "response": "[{\"id\":1,\"email\":\"client@brand.com\",\"role\":\"brand\"}]",
+      "description": "List users in the account"
+    }
+  ],
+  "roadmap": [
+    {
+      "id": "m1",
+      "title": "Dashboard + projects CRUD + metrics endpoint",
+      "status": "pending"
+    },
+    {
+      "id": "m2",
+      "title": "Formulation builder with ingredient library",
+      "status": "pending"
+    },
+    {
+      "id": "m3",
+      "title": "Compliance check & report generation",
+      "status": "pending"
+    },
+    {
+      "id": "m4",
+      "title": "Collaboration tools (comments, version history)",
+      "status": "pending"
+    },
+    {
+      "id": "m5",
+      "title": "Market-ready checklist + final export",
+      "status": "pending"
+    }
+  ]
+}
