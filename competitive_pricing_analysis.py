@@ -6,7 +6,6 @@ and outputs structured JSON + a formatted competitive comparison for landing pag
 """
 
 import json
-import sys
 from datetime import datetime
 
 # === EMBEDDED COMPETITIVE DATASET (from competitive_intel_report.py) ===
