@@ -88,7 +88,7 @@ def main() -> int:
         print(f"    🗂️  {tbl}{padding}{cnt:>4} row(s)")
         total += cnt
 
-    print(f"\n    ─────────────────────────────────────")
+    print("\n    ─────────────────────────────────────")
     print(f"    📈 TOTAL rows across all tables:     {total:>4}")
     print(f"\n    ✅ Database ready: {DB_PATH.resolve()}")
 
