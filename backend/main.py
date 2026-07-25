@@ -1,6 +1,6 @@
 import sqlite3
 from pathlib import Path
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 # ---------------------------------------------------------------------------
