@@ -1,0 +1,56 @@
+[
+  {
+    "instruction": "Change the branding to reflect that of the branding on my business website www.cozzianenterprises.com",
+    "ts": "2026-07-24T02:47:21.894771",
+    "chars_before": 23588,
+    "chars_after": 23592
+  },
+  {
+    "instruction": "Match the color scheme of www.cozzianenterprises.com",
+    "ts": "2026-07-25T18:27:58.611772",
+    "chars_before": 23592,
+    "chars_after": 23771
+  },
+  {
+    "instruction": "apply the color scheme of www.cozzianenterprises.com",
+    "ts": "2026-07-25T18:28:44.846728",
+    "chars_before": 23592,
+    "chars_after": 23588
+  },
+  {
+    "instruction": "Change the color scheme to be scientific and deep and technology forward, we want it to be blues and purples",
+    "ts": "2026-07-25T18:31:32.979067",
+    "chars_before": 23588,
+    "chars_after": 23562
+  },
+  {
+    "instruction": "Fix Tailwind v4 CDN bug — replace with v3 CSS link and update style tag in index.html",
+    "ts": "2026-07-28T14:22:00.000000",
+    "chars_before": 6520,
+    "chars_after": 6657
+  },
+  {
+    "instruction": "Add FastAPI backend server (backend/main.py) with REST endpoints exposing cozzian.db",
+    "ts": "2026-07-28T14:30:00.000000",
+    "chars_before": 0,
+    "chars_after": 6773
+  },
+  {
+    "instruction": "Add database unit tests (db/test_db.py) — 30 tests covering schema, constraints, cascades",
+    "ts": "2026-07-28T14:45:00.000000",
+    "chars_before": 0,
+    "chars_after": 27924
+  },
+  {
+    "instruction": "Add auth security hardening — password strength validation in App.jsx (signup mode)",
+    "ts": "2026-07-28T15:00:00.000000",
+    "chars_before": 23562,
+    "chars_after": 23984
+  },
+  {
+    "instruction": "Update ProductApp to fetch and display projects from backend API",
+    "ts": "2026-07-28T15:15:00.000000",
+    "chars_before": 23984,
+    "chars_after": 24120
+  }
+]
