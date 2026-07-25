@@ -48,9 +48,12 @@ def db_connect():
 
 
 def reseed_database():
-    """Drop and recreate the database from schema.sql and seed.sql (data mutation tests use this)."""
+    """Drop and recreate the database from schema.sql and seed.sql."""
     schema_sql = SCHEMA_PATH.read_text(encoding="utf-8")
     seed_sql = SEED_PATH.read_text(encoding="utf-8")
+    # Delete the DB file so we start completely fresh
+    if DB_PATH.exists():
+        DB_PATH.unlink()
     conn = sqlite3.connect(str(DB_PATH))
     conn.execute("PRAGMA foreign_keys=ON")
     conn.executescript(schema_sql)
