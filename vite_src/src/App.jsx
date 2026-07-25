@@ -280,6 +280,13 @@ function AuthGate({ onAuth, onClose }) {
   const submit = async (e) => {
     e.preventDefault();
     if (!form.email || !form.password) return;
+    if (mode === 'signup') {
+      const pw = form.password;
+      if (pw.length < 8 || !/[A-Z]/.test(pw) || !/\d/.test(pw)) {
+        setPasswordError('Password must be at least 8 characters, include an uppercase letter, and a digit.');
+        setLoading(false); return;
+      } else { setPasswordError(''); }
+    }
     setLoading(true); setError('');
     const _b = window.__NC_BASE__ || ''; const _s = window.__COMPANY_SLUG__ || '';
     const body = JSON.stringify({ email: form.email, password: form.password, name: form.name });
