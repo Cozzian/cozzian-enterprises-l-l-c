@@ -50,18 +50,18 @@ def reseed_database():
     conn.close()
 
 
-def get_project_id(conn):
-    """Return the first project id, reseeding if no projects exist."""
+def ensure_project_exists(conn):
+    """Return a valid project id, reseeding the DB if no projects exist."""
     row = conn.execute("SELECT id FROM client_projects LIMIT 1").fetchone()
     if row is not None:
         return row[0]
-    # No projects — reseed and try again
+    # No projects — reseed and try again with a fresh connection
     reseed_database()
     conn.close()
-    new_conn = db_connect()
-    row = new_conn.execute("SELECT id FROM client_projects LIMIT 1").fetchone()
+    fresh = db_connect()
+    row = fresh.execute("SELECT id FROM client_projects LIMIT 1").fetchone()
     assert row is not None, "Reseeded but still no projects"
-    return row[0], new_conn
+    return row[0]
 
 
 # ====================================================================
