@@ -135,7 +135,7 @@ def analyze():
     """Run the full analysis and return structured opportunities."""
     print("=" * 72)
     print("  COZZIAN ENTERPRISES — COMPETITIVE PRICING & LEAD-TIME ANALYSIS")
-    print("  Generated:", datetime.now().strftime("%B %d, %Y"))
+    print("  Generated: %s" % datetime.now().strftime("%B %d, %Y"))
     print("=" * 72)
 
     # --- MOQ Analysis ---
