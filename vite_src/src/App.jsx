@@ -260,12 +260,49 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
 }
 
 function ProductApp({ user, onLogout }) {
-  /* NC_PLACEHOLDER_DASHBOARD — replaced by the real dashboard in Phase 2 */
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const BASE = window.__BACKEND_URL__ || 'http://localhost:8000';
+    fetch(BASE + '/api/projects')
+      .then(r => r.json())
+      .then(data => setProjects(data?.projects ?? data ?? []))
+      .catch(() => setProjects([]))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const projectList = (projects ?? []).map(p => (
+    <div key={p.id} style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: '14px 18px', background: '#12172b', borderRadius: 10,
+      border: '1px solid #1e2740', marginBottom: 10
+    }}>
+      <div>
+        <div style={{ fontWeight: 600, color: '#e6eaf2' }}>{p.name || 'Untitled'}</div>
+        <div style={{ fontSize: 13, color: '#9aa6bd', marginTop: 4 }}>Status: {p.status || 'draft'}</div>
+      </div>
+      <a href={'/projects/' + p.id} style={{
+        color: '#C8A96E', textDecoration: 'none', fontSize: 14, fontWeight: 600
+      }}>View Details →</a>
+    </div>
+  ));
+
   return (
-    <div style={{ minHeight: '100vh', background: '#0a0d18', color: '#e6eaf2', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: 24, textAlign: 'center' }}>
-      <h1 style={{ fontSize: 28, fontWeight: 800, margin: 0 }}>Welcome, {user?.name || user?.email || 'there'} 👋</h1>
-      <p style={{ color: '#9aa6bd', maxWidth: 460, lineHeight: 1.5, margin: 0 }}>Your account is ready. Your dashboard is being set up and will appear here shortly.</p>
-      <button onClick={onLogout} style={{ marginTop: 8, padding: '10px 18px', borderRadius: 10, border: '1px solid #2a3350', background: 'transparent', color: '#e6eaf2', fontWeight: 600, cursor: 'pointer' }}>Log out</button>
+    <div style={{ minHeight: '100vh', background: '#0a0d18', color: '#e6eaf2', padding: 24 }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
+          <h1 style={{ fontSize: 24, fontWeight: 800, margin: 0 }}>Welcome, {user?.name || user?.email || 'there'} 👋</h1>
+          <button onClick={onLogout} style={{ padding: '8px 16px', borderRadius: 10, border: '1px solid #2a3350', background: 'transparent', color: '#e6eaf2', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>Log out</button>
+        </div>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#C8A96E' }}>Projects</h2>
+        {loading ? (
+          <p style={{ color: '#9aa6bd' }}>Loading projects...</p>
+        ) : projectList.length === 0 ? (
+          <p style={{ color: '#9aa6bd' }}>No projects yet.</p>
+        ) : (
+          projectList
+        )}
+      </div>
     </div>
   );
 }
