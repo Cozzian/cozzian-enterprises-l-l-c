@@ -141,8 +141,8 @@ def test_client_projects_nullable_fields():
     conn = db_connect()
     cursor = conn.cursor()
 
-    # Use get_project_id which auto-reseeds if DB is empty
-    project_id = get_project_id(conn)
+    # Use ensure_project_exists which auto-reseeds if DB is empty
+    project_id = ensure_project_exists(conn)
 
     cursor.execute(
         """
