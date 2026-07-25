@@ -363,7 +363,7 @@ def analyze():
 
 if __name__ == "__main__":
     result = analyze()
-    print(f"\n{'='*72}")
+    print("\n" + "=" * 72)
     print(f"  ANALYSIS COMPLETE — {len(result['opportunities'])} opportunities extracted")
-    print(f"  Ready for landing page implementation")
-    print(f"{'='*72}")
+    print("  Ready for landing page implementation")
+    print("=" * 72)
