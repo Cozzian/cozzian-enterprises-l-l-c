@@ -323,7 +323,7 @@ def analyze():
     # Save structured output
     with open("competitive_pricing_insights.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"\n✅ Saved to competitive_pricing_insights.json")
+    print("\n✅ Saved to competitive_pricing_insights.json")
 
     # Save a markdown summary for landing page team
     md = []
