@@ -356,7 +356,7 @@ def analyze():
 
     with open("competitive_pricing_insights.md", "w") as f:
         f.write("\n".join(md))
-    print(f"✅ Saved to competitive_pricing_insights.md")
+    print("✅ Saved to competitive_pricing_insights.md")
 
     return output
 
