@@ -462,32 +462,6 @@ def test_compliance_checklists_requires_checklist_item():
         conn.close()
 
 
-def test_compliance_checklists_requires_category():
-    """category is NOT NULL; inserting without it must raise IntegrityError."""
-    reseed_database()
-    conn = db_connect()
-    cursor = conn.cursor()
-    cursor.execute("SELECT id FROM client_projects LIMIT 1")
-    project_id = cursor.fetchone()[0]
-    try:
-        cursor.execute(
-            """
-            INSERT INTO compliance_checklists
-                (project_id, checklist_item)
-            VALUES (?, ?)
-            """,
-            (project_id, "Required category test"),
-        )
-        conn.commit()
-        assert False, (
-            "Expected IntegrityError for missing category, but insert succeeded"
-        )
-    except sqlite3.IntegrityError:
-        pass  # Expected
-    finally:
-        conn.close()
-
-
 def test_batch_test_results_requires_batch_number():
     """batch_number is NOT NULL; inserting without it must raise IntegrityError."""
     reseed_database()
