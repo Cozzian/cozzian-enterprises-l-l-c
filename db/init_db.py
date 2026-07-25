@@ -17,18 +17,6 @@ SCHEMA_PATH = DB_DIR / "schema.sql"
 SEED_PATH = DB_DIR / "seed.sql"
 
 
-def run_script(cursor: sqlite3.Cursor, script: str, label: str) -> None:
-    """Execute a multi-statement SQL script, splitting on ';' to handle triggers."""
-    for statement in script.split(";"):
-        stmt = statement.strip()
-        if stmt and not stmt.startswith("--"):
-            try:
-                cursor.execute(stmt)
-            except sqlite3.Error as e:
-                print(f"  ⚠  Error in {label}: {e}")
-                print(f"     Statement: {stmt[:120]}...")
-
-
 def get_row_counts(cursor: sqlite3.Cursor) -> dict[str, int]:
     """Return {table_name: row_count} for all user tables in the DB."""
     cursor.execute(
@@ -69,15 +57,23 @@ def main() -> int:
     print("  Cozzian Enterprises — Database Initialiser")
     print(f"{'='*60}\n")
 
-    # --- 4. Run schema ----------------------------------------------------
+    # --- 4. Run schema using executescript (handles embedded ';' correctly) -
     print("📦 Creating schema...")
-    run_script(cursor, schema_sql, "schema")
-    conn.commit()
+    try:
+        cursor.executescript(schema_sql)
+        print("    ✅ Schema created successfully")
+    except sqlite3.Error as e:
+        print(f"    ❌ Schema error: {e}")
+        return 1
 
     # --- 5. Run seed ------------------------------------------------------
     print("🌱 Seeding data...")
-    run_script(cursor, seed_sql, "seed")
-    conn.commit()
+    try:
+        cursor.executescript(seed_sql)
+        print("    ✅ Seed data inserted successfully")
+    except sqlite3.Error as e:
+        print(f"    ❌ Seed error: {e}")
+        return 1
 
     # --- 6. Print row counts -----------------------------------------------
     print("\n📊 Row counts after seeding:\n")
