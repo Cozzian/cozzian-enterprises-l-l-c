@@ -138,10 +138,6 @@ def analyze():
     print("  Generated:", datetime.now().strftime("%B %d, %Y"))
     print("=" * 72)
 
-    # Separate Cozzian from competitors
-    cozzian = [c for c in COMPETITORS if c["is_self"]][0]
-    rivals = [c for c in COMPETITORS if not c["is_self"]]
-
     # --- MOQ Analysis ---
     print("\n\n--- MOQ COMPARISON TABLE ---")
     print(f"{'Company':<40} {'Min MOQ (units)':<20} {'MOQ Flexibility'}")
