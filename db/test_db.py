@@ -16,3 +16,15 @@ DB_PATH = Path("db/cozzian.db")
 
 ### fixtures ###
 
+
+###   -----------------------------------------------------------
+### 1. Connect to cozzian.db
+###   -----------------------------------------------------------
+
+
+def fixtures_connect():
+    """Return an open SQLite connection and cursor for the cozzian.db database."""
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.execute("PRAGMA foreign_keys=ON")
+    cursor = conn.cursor()
+    return conn, cursor
