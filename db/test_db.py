@@ -50,20 +50,6 @@ def reseed_database():
     conn.close()
 
 
-def ensure_project_exists(conn):
-    """Return a valid project id, reseeding the DB if no projects exist."""
-    row = conn.execute("SELECT id FROM client_projects LIMIT 1").fetchone()
-    if row is not None:
-        return row[0]
-    # No projects — reseed and try again with a fresh connection
-    reseed_database()
-    conn.close()
-    fresh = db_connect()
-    row = fresh.execute("SELECT id FROM client_projects LIMIT 1").fetchone()
-    assert row is not None, "Reseeded but still no projects"
-    return row[0]
-
-
 # ====================================================================
 # 1. Connect to cozzian.db  (pytest fixture)
 # ====================================================================
