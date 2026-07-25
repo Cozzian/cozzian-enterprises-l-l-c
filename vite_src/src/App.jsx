@@ -61,33 +61,33 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
   ];
 
   return (
-    <div className="bg-[#F7F4EF]" style={{ minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh', background: '#0b0a1a' }}>
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrollY > 50 ? 'rgba(247,244,239,0.95)' : 'transparent',
+        background: scrollY > 50 ? 'rgba(11,10,26,0.95)' : 'transparent',
         backdropFilter: scrollY > 50 ? 'blur(12px)' : 'none',
-        borderBottom: scrollY > 50 ? '1px solid rgba(11,61,46,0.08)' : '1px solid transparent',
+        borderBottom: scrollY > 50 ? '1px solid rgba(139,92,246,0.2)' : '1px solid transparent',
         transition: 'all 0.3s ease'
       }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 10, background: 'linear-gradient(135deg, #0B3D2E, #C8A96E)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Beaker size={20} color="#F7F4EF" />
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: 'linear-gradient(135deg, #7c3aed, #3b82f6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Beaker size={20} color="#ffffff" />
             </div>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: '#0B3D2E' }}>Cozzian LabSync</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: '#e0e7ff' }}>Cozzian LabSync</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
             <div style={{ display: 'none', gap: 28, '@media (min-width:768px)': { display: 'flex' } }}>
               {['Features', 'Impact', 'Pricing'].map(item => (
-                <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#0B3D2E', textDecoration: 'none', fontSize: 14, fontWeight: 500, opacity: 0.7, transition: 'opacity 0.2s', ':hover': { opacity: 1 } }}>{item}</a>
+                <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#c4b5fd', textDecoration: 'none', fontSize: 14, fontWeight: 500, opacity: 0.8, transition: 'opacity 0.2s', ':hover': { opacity: 1 } }}>{item}</a>
               ))}
             </div>
             <button onClick={onLogin} style={{
-              padding: '10px 24px', borderRadius: 8, border: '1px solid #0B3D2E', background: 'transparent',
-              color: '#0B3D2E', fontWeight: 600, fontSize: 14, cursor: 'pointer', transition: 'all 0.2s'
-            }} onMouseEnter={e => { e.target.style.background = '#0B3D2E'; e.target.style.color = '#F7F4EF'; }}
-            onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = '#0B3D2E'; }}>Sign in</button>
-            <button onClick={() => setShowMobile(!showMobile)} style={{ background: 'none', border: 'none', color: '#0B3D2E', cursor: 'pointer', display: 'none' }}>
+              padding: '10px 24px', borderRadius: 8, border: '1px solid #7c3aed', background: 'transparent',
+              color: '#c4b5fd', fontWeight: 600, fontSize: 14, cursor: 'pointer', transition: 'all 0.2s'
+            }} onMouseEnter={e => { e.target.style.background = '#7c3aed'; e.target.style.color = '#ffffff'; }}
+            onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = '#c4b5fd'; }}>Sign in</button>
+            <button onClick={() => setShowMobile(!showMobile)} style={{ background: 'none', border: 'none', color: '#e0e7ff', cursor: 'pointer', display: 'none' }}>
               {showMobile ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -97,32 +97,32 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
       <section style={{ padding: '140px 24px 80px', maxWidth: 1280, margin: '0 auto' }}>
         <div className="fade-up" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', background: 'rgba(200,169,110,0.15)', borderRadius: 100, marginBottom: 24, border: '1px solid rgba(200,169,110,0.3)' }}>
-              <Leaf size={14} color="#C8A96E" />
-              <span style={{ color: '#C8A96E', fontSize: 13, fontWeight: 600 }}>Science-led innovation</span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', background: 'rgba(124,58,237,0.15)', borderRadius: 100, marginBottom: 24, border: '1px solid rgba(124,58,237,0.3)' }}>
+              <Leaf size={14} color="#a78bfa" />
+              <span style={{ color: '#a78bfa', fontSize: 13, fontWeight: 600 }}>Science-led innovation</span>
             </div>
-            <h1 style={{ fontSize: 52, fontWeight: 700, color: '#0B3D2E', lineHeight: 1.1, marginBottom: 20 }}>
-              From concept to <span className="gradient-text">compliant product</span> in 45 days
+            <h1 style={{ fontSize: 52, fontWeight: 700, color: '#e0e7ff', lineHeight: 1.1, marginBottom: 20 }}>
+              From concept to <span style={{ background: 'linear-gradient(135deg, #7c3aed, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>compliant product</span> in 45 days
             </h1>
-            <p style={{ fontSize: 18, color: '#4A5B50', lineHeight: 1.6, marginBottom: 32, maxWidth: 480 }}>
+            <p style={{ fontSize: 18, color: '#a5b4fc', lineHeight: 1.6, marginBottom: 32, maxWidth: 480 }}>
               Expert formulation science and R&D prototyping for cosmetics, nutraceutical, pharmaceutical, and food & beverage brands — turning concepts into compliant, market-ready products.
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <button onClick={onGetStarted} style={{
-                padding: '16px 32px', borderRadius: 10, border: 'none', background: '#0B3D2E',
-                color: '#F7F4EF', fontWeight: 700, fontSize: 16, cursor: 'pointer',
+                padding: '16px 32px', borderRadius: 10, border: 'none', background: '#7c3aed',
+                color: '#ffffff', fontWeight: 700, fontSize: 16, cursor: 'pointer',
                 transition: 'all 0.3s', display: 'flex', alignItems: 'center', gap: 8
               }}
-              onMouseEnter={e => { e.target.style.background = '#C8A96E'; e.target.style.color = '#0B3D2E'; }}
-              onMouseLeave={e => { e.target.style.background = '#0B3D2E'; e.target.style.color = '#F7F4EF'; }}>
+              onMouseEnter={e => { e.target.style.background = '#3b82f6'; e.target.style.color = '#ffffff'; }}
+              onMouseLeave={e => { e.target.style.background = '#7c3aed'; e.target.style.color = '#ffffff'; }}>
                 Start your project <ChevronRight size={18} />
               </button>
               <button onClick={onLogin} style={{
-                padding: '16px 32px', borderRadius: 10, border: '2px solid #0B3D2E', background: 'transparent',
-                color: '#0B3D2E', fontWeight: 600, fontSize: 16, cursor: 'pointer', transition: 'all 0.3s'
+                padding: '16px 32px', borderRadius: 10, border: '2px solid #7c3aed', background: 'transparent',
+                color: '#a78bfa', fontWeight: 600, fontSize: 16, cursor: 'pointer', transition: 'all 0.3s'
               }}
-              onMouseEnter={e => { e.target.style.borderColor = '#C8A96E'; e.target.style.color = '#C8A96E'; }}
-              onMouseLeave={e => { e.target.style.borderColor = '#0B3D2E'; e.target.style.color = '#0B3D2E'; }}>
+              onMouseEnter={e => { e.target.style.borderColor = '#3b82f6'; e.target.style.color = '#3b82f6'; }}
+              onMouseLeave={e => { e.target.style.borderColor = '#7c3aed'; e.target.style.color = '#a78bfa'; }}>
                 See client portal
               </button>
             </div>
@@ -132,19 +132,19 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
               position: 'absolute',
               top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
               width: 320, height: 320, borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(11,61,46,0.08) 0%, rgba(200,169,110,0.05) 100%)',
+              background: 'radial-gradient(circle, rgba(124,58,237,0.08) 0%, rgba(59,130,246,0.05) 100%)',
               display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
               <div style={{
                 width: 240, height: 240, borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(11,61,46,0.12) 0%, rgba(200,169,110,0.08) 100%)',
+                background: 'radial-gradient(circle, rgba(124,58,237,0.12) 0%, rgba(59,130,246,0.08) 100%)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8
               }}>
-                <div style={{ width: 60, height: 60, borderRadius: 14, background: '#0B3D2E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Beaker size={30} color="#C8A96E" />
+                <div style={{ width: 60, height: 60, borderRadius: 14, background: '#7c3aed', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Beaker size={30} color="#a78bfa" />
                 </div>
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: '#0B3D2E' }}>LabSync</span>
-                <span style={{ fontSize: 12, color: '#4A5B50', fontWeight: 500 }}>R&D Accelerator</span>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: '#e0e7ff' }}>LabSync</span>
+                <span style={{ fontSize: 12, color: '#a5b4fc', fontWeight: 500 }}>R&D Accelerator</span>
               </div>
             </div>
           </div>
@@ -153,55 +153,141 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
 
       <section id="features" style={{ padding: '40px 24px 80px', maxWidth: 1280, margin: '0 auto' }}>
         <div className="fade-up" style={{ textAlign: 'center', marginBottom: 56 }}>
-          <span style={{ color: '#C8A96E', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 2 }}>Scientific Capabilities</span>
-          <h2 style={{ fontSize: 38, fontWeight: 700, color: '#0B3D2E', marginTop: 12 }}>End-to-end formulation expertise</h2>
-          <p style={{ color: '#4A5B50', fontSize: 16, marginTop: 12, maxWidth: 600, margin: '12px auto 0' }}>Four integrated pillars of R&D excellence that compress your development timeline.</p>
+          <span style={{ color: '#a78bfa', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 2 }}>Scientific Capabilities</span>
+          <h2 style={{ fontSize: 38, fontWeight: 700, color: '#e0e7ff', marginTop: 12 }}>End-to-end formulation expertise</h2>
+          <p style={{ color: '#a5b4fc', fontSize: 16, marginTop: 12, maxWidth: 600, margin: '12px auto 0' }}>Four integrated pillars of R&D excellence that compress your development timeline.</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: 24 }}>
           {(features || []).map((f, i) => (
             <div key={i} className="card-hover" style={{
-              padding: 28, borderRadius: 14, background: '#fff',
-              border: '1px solid rgba(11,61,46,0.08)',
+              padding: 28, borderRadius: 14, background: '#12122a',
+              border: '1px solid #1e1e3a',
               transition: 'all 0.3s'
             }}>
-              <div style={{ width: 44, height: 44, borderRadius: 10, background: 'rgba(11,61,46,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0B3D2E', marginBottom: 16 }}>
+              <div style={{ width: 44, height: 44, borderRadius: 10, background: 'rgba(124,58,237,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa', marginBottom: 16 }}>
                 {f.icon}
               </div>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: '#0B3D2E', marginBottom: 8 }}>{f.title}</h3>
-              <p style={{ color: '#4A5B50', fontSize: 14, lineHeight: 1.6 }}>{f.desc}</p>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: '#e0e7ff', marginBottom: 8 }}>{f.title}</h3>
+              <p style={{ color: '#a5b4fc', fontSize: 14, lineHeight: 1.6 }}>{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section style={{ padding: '60px 24px', background: '#0B3D2E' }}>
+      <section style={{ padding: '60px 24px', background: 'linear-gradient(135deg, #7c3aed, #3b82f6)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div className="fade-up" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40 }}>
             {(stats || []).map((s, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 52, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#C8A96E', marginBottom: 8 }}>{s.value}</div>
-                <div style={{ fontSize: 15, color: 'rgba(247,244,239,0.8)', fontWeight: 500 }}>{s.label}</div>
+                <div style={{ fontSize: 52, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#ffffff', marginBottom: 8 }}>{s.value}</div>
+                <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.8)', fontWeight: 500 }}>{s.label}</div>
               </div>
             ))}
           </div>
           <div style={{ marginTop: 40, textAlign: 'center' }}>
             <button onClick={onGetStarted} style={{
-              padding: '14px 28px', borderRadius: 10, border: 'none', background: '#C8A96E',
-              color: '#0B3D2E', fontWeight: 700, fontSize: 15, cursor: 'pointer',
+              padding: '14px 28px', borderRadius: 10, border: 'none', background: '#ffffff',
+              color: '#7c3aed', fontWeight: 700, fontSize: 15, cursor: 'pointer',
               transition: 'all 0.3s'
             }}
-            onMouseEnter={e => { e.target.style.background = '#F7F4EF'; e.target.style.color = '#0B3D2E'; }}
-            onMouseLeave={e => { e.target.style.background = '#C8A96E'; e.target.style.color = '#0B3D2E'; }}>
+            onMouseEnter={e => { e.target.style.background = '#e0e7ff'; e.target.style.color = '#7c3aed'; }}
+            onMouseLeave={e => { e.target.style.background = '#ffffff'; e.target.style.color = '#7c3aed'; }}>
               Accelerate your R&D — Get started
             </button>
           </div>
         </div>
       </section>
 
+      {/* Competitive advantage section — from competitive intel analysis */}
+      <section id="why-cozzian" style={{ padding: '80px 24px', maxWidth: 1280, margin: '0 auto' }}>
+        <div className="fade-up" style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span style={{ color: '#a78bfa', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 2 }}>Why Cozzian</span>
+          <h2 style={{ fontSize: 38, fontWeight: 700, color: '#e0e7ff', marginTop: 12 }}>Outpacing the competition</h2>
+          <p style={{ color: '#a5b4fc', fontSize: 16, marginTop: 12, maxWidth: 600, margin: '12px auto 0' }}>
+            Three advantages no other contract manufacturer can match — proven by competitive intelligence.
+          </p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          {[
+            {
+              icon: <TrendingUp size={24} />,
+              title: 'Startup-to-Scale MOQ Bridge',
+              stat: '50&rarr;500',
+              statLabel: 'R&D to production units',
+              highlights: [
+                '50-unit R&D batches — the industry\'s lowest minimum',
+                '500-unit production runs — no manufacturer swap needed',
+                'Lonza demands 10K+ units; Catalent demands 5K+',
+                'Full FDA/EU compliance from batch one, not an upsell'
+              ]
+            },
+            {
+              icon: <ShieldCheck size={24} />,
+              title: 'Speed &times; Compliance',
+              stat: '99%',
+              statLabel: 'First-pass compliance rate',
+              highlights: [
+                '2–4 week R&D turnaround with compliance baked in',
+                'Alibaba: cheap units but 2/10 regulatory score — costly rejections',
+                'Avg reformulation cost after failed customs: $5K–$15K',
+                'Cozzian: 9/10 formulation speed + 9/10 regulatory support'
+              ]
+            },
+            {
+              icon: <Activity size={24} />,
+              title: 'One-Stop Cross-Category',
+              stat: '4',
+              statLabel: 'Categories under one roof',
+              highlights: [
+                'Cosmetics, nutraceuticals, pharma, food & beverage',
+                'HydraPharm: nutra only. Lonza: pharma only.',
+                'Bundle a serum, supplement & functional beverage — one partner',
+                'Save 40% on coordination vs using separate manufacturers'
+              ]
+            }
+          ].map((item, i) => (
+            <div key={i} className="card-hover" style={{
+              padding: 28, borderRadius: 14, background: '#12122a',
+              border: '1px solid #1e1e3a',
+              transition: 'all 0.3s'
+            }}>
+              <div style={{ width: 44, height: 44, borderRadius: 10, background: 'rgba(124,58,237,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa', marginBottom: 16 }}>
+                {item.icon}
+              </div>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: '#e0e7ff', marginBottom: 4 }}>{item.title}</h3>
+              <div style={{ fontSize: 36, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#a78bfa', marginTop: 8, marginBottom: 2 }}>{item.stat}</div>
+              <div style={{ color: '#a5b4fc', fontSize: 12, marginBottom: 16, letterSpacing: 0.5 }}>{item.statLabel}</div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {(item.highlights || []).map((h, j) => (
+                  <li key={j} style={{
+                    display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 10,
+                    color: '#a5b4fc', fontSize: 13, lineHeight: 1.5
+                  }}>
+                    <span style={{ color: '#7c3aed', marginTop: 2, flexShrink: 0 }}>&#9656;</span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 40 }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '10px 20px', background: 'rgba(124,58,237,0.1)',
+            borderRadius: 10, border: '1px solid rgba(124,58,237,0.2)'
+          }}>
+            <span style={{ color: '#a5b4fc', fontSize: 13 }}>
+              &#128202; Based on competitive intelligence analysis vs Lonza, Catalent, Eurofins, Alibaba &amp; HydraPharm
+            </span>
+          </div>
+        </div>
+      </section>
+
       <section id="pricing" style={{ padding: '80px 24px', maxWidth: 1280, margin: '0 auto' }}>
         <div className="fade-up" style={{ textAlign: 'center', marginBottom: 48 }}>
-          <span style={{ color: '#C8A96E', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 2 }}>Transparent pricing</span>
-          <h2 style={{ fontSize: 38, fontWeight: 700, color: '#0B3D2E', marginTop: 12 }}>Plans that scale with your pipeline</h2>
+          <span style={{ color: '#a78bfa', fontSize: 14, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 2 }}>Transparent pricing</span>
+          <h2 style={{ fontSize: 38, fontWeight: 700, color: '#e0e7ff', marginTop: 12 }}>Plans that scale with your pipeline</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
           {[
@@ -210,30 +296,30 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
             { name: 'Enterprise', price: 'Custom', desc: 'For established brands requiring dedicated support', features: ['Unlimited projects', 'Dedicated formulation scientist', 'Custom ingredient sourcing', 'Regulatory consulting', 'White-label reports'] }
           ].map((tier, i) => (
             <div key={i} className="card-hover" style={{
-              padding: 32, borderRadius: 14, background: i === 1 ? '#0B3D2E' : '#fff',
-              border: i === 1 ? 'none' : '1px solid rgba(11,61,46,0.08)',
+              padding: 32, borderRadius: 14, background: i === 1 ? '#1e1e3a' : '#12122a',
+              border: '1px solid rgba(124,58,237,0.2)',
               position: 'relative'
             }}>
-              {i === 1 && <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: '#C8A96E', color: '#0B3D2E', padding: '4px 16px', borderRadius: 100, fontSize: 12, fontWeight: 700 }}>Most popular</div>}
-              <h3 style={{ fontSize: 20, fontWeight: 600, color: i === 1 ? '#F7F4EF' : '#0B3D2E', marginBottom: 6 }}>{tier.name}</h3>
-              <p style={{ color: i === 1 ? 'rgba(247,244,239,0.7)' : '#4A5B50', fontSize: 14, marginBottom: 20 }}>{tier.desc}</p>
-              <div style={{ fontSize: 40, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: i === 1 ? '#C8A96E' : '#0B3D2E', marginBottom: 4 }}>{tier.price}<span style={{ fontSize: 16, fontWeight: 400 }}>{tier.price !== 'Custom' ? '/mo' : ''}</span></div>
-              <div style={{ margin: '24px 0', borderTop: `1px solid ${i === 1 ? 'rgba(247,244,239,0.15)' : 'rgba(11,61,46,0.08)'}`, paddingTop: 20 }}>
+              {i === 1 && <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: '#7c3aed', color: '#ffffff', padding: '4px 16px', borderRadius: 100, fontSize: 12, fontWeight: 700 }}>Most popular</div>}
+              <h3 style={{ fontSize: 20, fontWeight: 600, color: '#e0e7ff', marginBottom: 6 }}>{tier.name}</h3>
+              <p style={{ color: '#a5b4fc', fontSize: 14, marginBottom: 20 }}>{tier.desc}</p>
+              <div style={{ fontSize: 40, fontWeight: 700, fontFamily: "'Space Grotesk', sans-serif", color: '#a78bfa', marginBottom: 4 }}>{tier.price}<span style={{ fontSize: 16, fontWeight: 400 }}>{tier.price !== 'Custom' ? '/mo' : ''}</span></div>
+              <div style={{ margin: '24px 0', borderTop: '1px solid rgba(124,58,237,0.15)', paddingTop: 20 }}>
                 {tier.features.map((f, j) => (
-                  <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12, color: i === 1 ? 'rgba(247,244,239,0.8)' : '#4A5B50', fontSize: 14 }}>
-                    <Check size={16} color={i === 1 ? '#C8A96E' : '#0B3D2E'} />
+                  <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12, color: '#a5b4fc', fontSize: 14 }}>
+                    <Check size={16} color="#7c3aed" />
                     {f}
                   </div>
                 ))}
               </div>
               <button onClick={onGetStarted} style={{
                 width: '100%', padding: '14px', borderRadius: 10, border: 'none',
-                background: i === 1 ? '#C8A96E' : '#0B3D2E',
-                color: i === 1 ? '#0B3D2E' : '#F7F4EF', fontWeight: 700, fontSize: 15, cursor: 'pointer',
+                background: i === 1 ? '#7c3aed' : '#7c3aed',
+                color: '#ffffff', fontWeight: 700, fontSize: 15, cursor: 'pointer',
                 transition: 'all 0.3s'
               }}
-              onMouseEnter={e => { e.target.style.background = i === 1 ? '#F7F4EF' : '#C8A96E'; e.target.style.color = '#0B3D2E'; }}
-              onMouseLeave={e => { e.target.style.background = i === 1 ? '#C8A96E' : '#0B3D2E'; e.target.style.color = i === 1 ? '#0B3D2E' : '#F7F4EF'; }}>
+              onMouseEnter={e => { e.target.style.background = '#3b82f6'; e.target.style.color = '#ffffff'; }}
+              onMouseLeave={e => { e.target.style.background = '#7c3aed'; e.target.style.color = '#ffffff'; }}>
                 {tier.price === 'Custom' ? 'Contact sales' : 'Start free trial'}
               </button>
             </div>
@@ -241,18 +327,18 @@ function LandingPage({ onGetStarted, onLogin, onSignup }) {
         </div>
       </section>
 
-      <footer style={{ background: '#0B3D2E', padding: '40px 24px 24px' }}>
+      <footer style={{ background: '#0d0d24', padding: '40px 24px 24px', borderTop: '1px solid rgba(124,58,237,0.2)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Beaker size={20} color="#C8A96E" />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: '#F7F4EF' }}>Cozzian LabSync</span>
+            <Beaker size={20} color="#a78bfa" />
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: '#e0e7ff' }}>Cozzian LabSync</span>
           </div>
           <div style={{ display: 'flex', gap: 24 }}>
             {['Terms', 'Privacy', 'Contact'].map(l => (
-              <span key={l} style={{ color: 'rgba(247,244,239,0.6)', fontSize: 13, cursor: 'pointer', transition: 'color 0.2s', ':hover': { color: '#C8A96E' } }}>{l}</span>
+              <span key={l} style={{ color: 'rgba(165,180,252,0.6)', fontSize: 13, cursor: 'pointer', transition: 'color 0.2s', ':hover': { color: '#a78bfa' } }}>{l}</span>
             ))}
           </div>
-          <span style={{ color: 'rgba(247,244,239,0.4)', fontSize: 13 }}>© 2025 Cozzian Enterprises L.L.C.</span>
+          <span style={{ color: 'rgba(165,180,252,0.4)', fontSize: 13 }}>© 2025 Cozzian Enterprises L.L.C.</span>
         </div>
       </footer>
     </div>
