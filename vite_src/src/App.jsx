@@ -304,7 +304,8 @@ function AuthGate({ onAuth, onClose }) {
         <h3 style={{ margin: '0 0 16px', fontSize: 20, fontWeight: 700 }}>{mode === 'signup' ? 'Create your account' : 'Welcome back'}</h3>
         {mode === 'signup' && <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" style={_ip} />}
         <input value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Work email" type="email" required style={_ip} />
-        <input value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} placeholder="Password (min 6 chars)" type="password" required style={_ip} />
+        <input value={form.password} onChange={(e) => { setForm({ ...form, password: e.target.value }); setPasswordError(''); }} placeholder="Password" type="password" required style={_ip} />
+        {passwordError && <p style={{ color: '#fbbf24', fontSize: 12, margin: '2px 0 0', textAlign: 'left' }}>{passwordError}</p>}
         {error && <p style={{ color: '#f87171', fontSize: 13, margin: '6px 0 0' }}>{error}</p>}
         <button type="submit" disabled={loading} style={{ width: '100%', marginTop: 10, padding: '12px', borderRadius: 9, border: 'none', background: loading ? '#4b50b8' : '#6366f1', color: '#fff', fontWeight: 700, fontSize: 15, cursor: loading ? 'default' : 'pointer' }}>
           {loading ? '…' : mode === 'signup' ? 'Get started free' : 'Log in'}
