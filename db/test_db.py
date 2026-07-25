@@ -138,11 +138,9 @@ def test_client_projects_nullable_fields():
     client_projects allows NULL on: contact_name, contact_email, category,
     target_launch, budget_usd, notes.
     """
+    reseed_database()
     conn = db_connect()
     cursor = conn.cursor()
-
-    # Use ensure_project_exists which auto-reseeds if DB is empty
-    project_id = ensure_project_exists(conn)
 
     cursor.execute(
         """
